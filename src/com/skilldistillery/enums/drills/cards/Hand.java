@@ -2,9 +2,9 @@ package com.skilldistillery.enums.drills.cards;
 
 import java.util.*;
 
-public class Hand {
+public abstract class Hand {
 
-	private List<Card> hand;
+	protected List<Card> hand;
 
 	Hand() {
 		hand = new ArrayList<Card>();
@@ -20,19 +20,19 @@ public class Hand {
 	}
 
 	public void clearHand() {
-		for(int i = 0; i < hand.size(); i++) {
-			hand.remove(i);
-		}
+		hand = new ArrayList<Card>();
 	}
 
 	public List<Card> getCards() {
 
 		if (hand.size() > 0) {
 			for (int i = 0; i < hand.size(); i++) {
-				System.out.println(hand.get(i));
+				System.out.println(hand.get(i).toString());
 			}
 		}
-		System.out.println("Empty");
+		else {
+			System.out.println("Empty");	
+		}
 		return null;
 	}
 
