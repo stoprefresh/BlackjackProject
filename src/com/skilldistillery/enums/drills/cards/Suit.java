@@ -8,7 +8,7 @@ public enum Suit {
 	DIAMONDS("Diamonds");
 	
 	
-	private String cardName;
+	final private String cardName;
 	
 	Suit(String cardName) {
 		
@@ -17,6 +17,10 @@ public enum Suit {
 	}
 	
 	public String toString() {
+		return cardName;
+	}
+	
+	public String getName() {
 		return cardName;
 	}
 	

@@ -2,33 +2,36 @@ package com.skilldistillery.enums.drills.cards;
 
 public class Card {
 
-	private String suit;
-	private int rank, value;
+	private int value;
+	
+	private Rank cardCurRank;
+	
+	private Suit cardCurSuit;
 	
 	Card(){}
 	
 	Card(Rank r, Suit s){
-		
+		this.cardCurRank = r;
+		this.cardCurSuit = s;
+		this.value = r.getValue();
 	}
 	
 	public int getValue() {
 		return value;
 	}
 	
-	public String getSuit() {
-		return suit;
+	@Override
+	public String toString() {
+		return "Card [value=" + value + ", cardCurRank=" + cardCurRank + ", cardCurSuit=" + cardCurSuit + "]";
 	}
-	
-	public int getRank() {
-		return rank;
-	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + rank;
-		result = prime * result + ((suit == null) ? 0 : suit.hashCode());
+		result = prime * result + ((cardCurRank == null) ? 0 : cardCurRank.hashCode());
+		result = prime * result + ((cardCurSuit == null) ? 0 : cardCurSuit.hashCode());
+		result = prime * result + value;
 		return result;
 	}
 
@@ -41,19 +44,29 @@ public class Card {
 		if (getClass() != obj.getClass())
 			return false;
 		Card other = (Card) obj;
-		if (rank != other.rank)
+		if (cardCurRank != other.cardCurRank)
 			return false;
-		if (suit == null) {
-			if (other.suit != null)
-				return false;
-		} else if (!suit.equals(other.suit))
+		if (cardCurSuit != other.cardCurSuit)
+			return false;
+		if (value != other.value)
 			return false;
 		return true;
 	}
 
-	public String toString() {
-		
-		return rank +  " of " + suit;
+	public Rank getCardCurRank() {
+		return cardCurRank;
+	}
+
+	public void setCardCurRank(Rank cardCurRank) {
+		this.cardCurRank = cardCurRank;
+	}
+
+	public Suit getCardCurSuit() {
+		return cardCurSuit;
+	}
+
+	public void setCardCurSuit(Suit cardCurSuit) {
+		this.cardCurSuit = cardCurSuit;
 	}
 	
 }

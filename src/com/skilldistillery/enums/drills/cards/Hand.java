@@ -20,7 +20,9 @@ public class Hand {
 	}
 
 	public void clearHand() {
-
+		for(int i = 0; i < hand.size(); i++) {
+			hand.remove(i);
+		}
 	}
 
 	public List<Card> getCards() {
@@ -30,9 +32,8 @@ public class Hand {
 				System.out.println(hand.get(i));
 			}
 		}
-
+		System.out.println("Empty");
 		return null;
-
 	}
 
 	@Override
