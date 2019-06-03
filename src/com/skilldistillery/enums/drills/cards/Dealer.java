@@ -1,16 +1,11 @@
 package com.skilldistillery.enums.drills.cards;
 
-import java.util.Scanner;
-
 public class Dealer extends Hand {
 
-	
 	public Dealer(){}
 	
-	
-	
-	
-	public String decisionBJ(Scanner sc) {
+	public String dDealer() {
+		
 		
 		if(getHandValueBJ() < 17) {
 			decisions = "1";
@@ -18,13 +13,19 @@ public class Dealer extends Hand {
 		else if(getHandValueBJ() >= 17) {
 			decisions = "2";
 		}
-		
+		else {
+			decisions = "2";
+		}
 		return decisions;
 	}
 	
 	public void showCard(){
-
 		System.out.println(hand.get(0));
 	}
+	
 
+	@Override
+	protected void gameMenus() {
+		
+	}
 }

@@ -31,7 +31,7 @@ public class Deck {
 	public boolean checkDeckSize() {
 		
 		if((deckCards.size() == 52) && (deckCards.size() > 6)) {
-			System.out.println("The deck has is ready to use.\n");
+			System.out.println("The deck is ready to use.\n");
 			return true;
 		}
 		else if ((deckCards.size() <= 6)){

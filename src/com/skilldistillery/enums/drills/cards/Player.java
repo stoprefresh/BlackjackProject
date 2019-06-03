@@ -4,11 +4,9 @@ import java.util.*;
 
 public class Player extends Hand{
 
-	
-	
 	public Player(){}
 	
-	
+	// Method called for player decisions to check if input is valid.
 	protected String decisionBJ(Scanner sc) {
 		
 		try {
@@ -22,7 +20,7 @@ public class Player extends Hand{
 	
 	// The game menu will be called to give the player options on their turn and used in 
 		// the turns and rounds method.
-	private void gameMenus() {
+	protected void gameMenus() {
 		System.out.println();
 		System.out.println();
 		System.out.println("What would you like to do?");
@@ -32,12 +30,10 @@ public class Player extends Hand{
 		System.out.println("3. Fold, Leave the table and your money\t\n");
 	}
 
-
 	@Override
 	public int hashCode() {
 		return super.hashCode();
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -49,7 +45,4 @@ public class Player extends Hand{
 			return false;
 		return true;
 	}
-	
-	
-	
 }

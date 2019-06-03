@@ -22,7 +22,7 @@ public class Card {
 	
 	@Override
 	public String toString() {
-		return "Card [value=" + value + ", cardCurRank=" + cardCurRank + ", cardCurSuit=" + cardCurSuit + "]";
+		return cardCurRank + " of " + cardCurSuit + " [Worth: " + value + "]";
 	}
 
 	@Override

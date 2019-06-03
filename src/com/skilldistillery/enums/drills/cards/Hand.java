@@ -5,16 +5,19 @@ import java.util.*;
 public abstract class Hand {
 
 	protected String decisions;
-	protected int totalBlackJackVal = 0;
+	protected int totalBlackJackVal, tempTotal;
 	protected List<Card> hand;
 
 	public Hand() {
 		hand = new ArrayList<Card>();
 	}
 	
-	protected abstract String decisionBJ(Scanner sc);
+	
 
 	protected int getHandValueBJ() {
+		
+		totalBlackJackVal = 0;
+		
 		for(int i = 0; i < hand.size(); i++) {
 			totalBlackJackVal += hand.get(i).getValue();	
 		}
@@ -56,11 +59,12 @@ public abstract class Hand {
 	}
 
 	public int getTotalBlackJackVal() {
+		
 		return totalBlackJackVal;
 	}
 
-	public void setTotalBlackJackVal(int totalBlackJackVal) {
-		this.totalBlackJackVal = totalBlackJackVal;
+	public void setTotalBlackJackVal() {
+		this.totalBlackJackVal = 0;
 	}
 
 	public List<Card> getHand() {
@@ -105,8 +109,6 @@ public abstract class Hand {
 		return true;
 	}
 
-
-
-
+	protected abstract void gameMenus();
 
 }
